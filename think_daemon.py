@@ -31,7 +31,7 @@ BOTS = {
     },
     "NewRain": {
         "url": "http://newrain.sandbox.think.ke/",
-        "test_message": "Hello, What is NewRain in full?"
+        "test_message": "Hello, Where is New Rain located?"
     },
     "ODPC": {
         "url": "http://odpc.think.ke/",
@@ -43,7 +43,7 @@ BOTS = {
     },
     "Ammerah": {
         "url": "http://ameerah.sandbox.think.ke/",
-        "test_message": "Hello, What SPA services can I get from Ammerah?"
+        "test_message": "Hello, What facials do you offer for dry skin, and how much do they cost?"
     },
     "MPSR": {
         "url": "http://mpsr.sandbox.think.ke/",
@@ -63,12 +63,17 @@ BOTS = {
     },
     "RRM": {
         "url": "http://rrm.sandbox.think.ke/",
-        "test_message": "Hello, What shops are in RR Mall?"
+        "test_message": "Hello, What shops are in Roselyn riviera Mall?"
     },
     "ThinkSafety": {
         "url": "http://thinksafety.sandbox.think.ke/",
         "test_message": "Hello, What information can you provide me with?"
+    },
+    "Govbot": {
+        "url": "http://govstack-api.think.ke/",
+        "test_message": "Hello, What services does Govbot offer?"
     }
+
 }
 
 
@@ -77,12 +82,12 @@ LOG_FILE = "bot_monitor.log"
 # --- Setup logging ---
 logging.basicConfig(filename=LOG_FILE, level=logging.INFO, format='%(asctime)s - %(message)s')
 
-
 def send_email_alert(subject, body):
-    """Send email alert using SMTP"""
+    """Send email alert using Amazon SES"""
+    sender = os.getenv("EMAIL_SENDER", EMAIL_USER)
     try:
         msg = MIMEMultipart()
-        msg['From'] = EMAIL_USER
+        msg['From'] = sender
         msg['To'] = ALERT_RECIPIENT
         msg['Subject'] = subject
         msg.attach(MIMEText(body, 'plain'))
@@ -91,10 +96,9 @@ def send_email_alert(subject, body):
             server.starttls()
             server.login(EMAIL_USER, EMAIL_PASS)
             server.send_message(msg)
-        logging.info(f"Email sent: {subject}")
+        logging.info(f"📧 Email sent: {subject}")
     except Exception as e:
-        logging.error(f"Failed to send email: {e}")
-
+        logging.error(f"⚠️ Failed to send email: {e}")
 
 def test_bot(name, bot_info):
     """Ping chatbot and record its status"""
