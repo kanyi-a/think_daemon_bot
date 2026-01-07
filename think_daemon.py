@@ -1,3 +1,4 @@
+import http
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -47,8 +48,29 @@ BOTS = {
     "MPSR": {
         "url": "http://mpsr.sandbox.think.ke/",
         "test_message": "Hello, What is MPSR in full?"
+    },
+    "SHE": {
+        "url": "http://she.sandbox.think.ke/",
+        "test_message": "Hello, What is SHE in full?"
+    },
+    "NyumbaCinema": {
+        "url": "http://nyumba.sandbox.think.ke/",
+        "test_message": "Hello, How many people can the cinema seat?"
+    },
+    "BScompanion": {
+        "url": "http://bscompanion.sandbox.think.ke/",
+        "test_message": "Hello, Can you give me name suggestions for my nail business"
+    },
+    "RRM": {
+        "url": "http://rrm.sandbox.think.ke/",
+        "test_message": "Hello, What shops are in RR Mall?"
+    },
+    "ThinkSafety": {
+        "url": "http://thinksafety.sandbox.think.ke/",
+        "test_message": "Hello, What information can you provide me with?"
     }
 }
+
 
 LOG_FILE = "bot_monitor.log"
 
