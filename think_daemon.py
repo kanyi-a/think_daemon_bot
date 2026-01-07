@@ -72,6 +72,10 @@ BOTS = {
     "Govbot": {
         "url": "http://govstack-api.think.ke/",
         "test_message": "Hello, What services does Govbot offer?"
+    },
+    "SBD": {
+        "url": "http://irex.sandbox.think.ke",
+        "test_message": "Hello, What is Safety By Design?"
     }
 
 }
