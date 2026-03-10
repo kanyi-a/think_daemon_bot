@@ -34,7 +34,7 @@ BOTS = {
         "test_message": "Hello, Where is New Rain located?"
     },
     "ODPC": {
-        "url": "http://odpc.think.ke/",
+        "url": "http://linda.think.ke/",
         "test_message": "Hello, What is ODPC in full?"
     },
     "AgentAssistant": {
@@ -71,11 +71,23 @@ BOTS = {
     },
     "Govbot": {
         "url": "http://govstack-api.think.ke/",
-        "test_message": "Hello, What services does Govbot offer?"
+        "test_message": "Hello, How do i register as an alien ?"
     },
     "SBD": {
         "url": "http://irex.sandbox.think.ke",
         "test_message": "Hello, What is Safety By Design?"
+    },
+    "BRS Company Registration": {
+        "url": "http://creg.sandbox.think.ke/",
+        "test_message": "Hello, what information can you provide me with?"
+    },
+    "BRS Companion":{
+        "url": "http://brscomp.sandbox.think.ke/",
+        "test_message": "Hello, who is the current CEO of BRS?"    
+    },
+    "BS listing":{
+        "url": "http://bslisting.sandbox.think.ke/",
+        "test_message": "Hello, what services does BS listing offer?"
     }
 
 }
